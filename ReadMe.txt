@@ -7,5 +7,7 @@ Chaque exercice aura ca propre scène dans le dossier suivant : Git\TestTechniqu
  *à l'exception des exercices 1 et 2 qui sont ensembles*
 
 ______Horaire______
-23-03-02 à 15h30 : Début du test
-23-03-02 à 15h44 : Premeir commit
+23-03-02
+15h30 : Début du test
+15h44 : Premier commit
+17h39 : Exercice 1 commit
