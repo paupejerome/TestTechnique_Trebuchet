@@ -82,5 +82,5 @@ MonoBehaviour:
   y: 0
   z: 0
   nombreHorloges: 3
-  spawnRadius: 50
+  spawnRadius: 15
   spawnCollisionCheckRadius: 5

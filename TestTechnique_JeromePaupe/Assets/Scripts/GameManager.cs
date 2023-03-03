@@ -6,31 +6,76 @@ public class GameManager : MonoBehaviour
 {
     public GameObject prefabHorloge;
     public GameObject gamObjRandomSpawnPoint;
-    public int x,y,z;
-
+    public AudioSource source;
+    public int x,y,z; //coordonne du instantiate awake
     public int nombreHorloges;
     public float spawnRadius;
     public float spawnCollisionCheckRadius;
 
+    private int clocks = 0;
+    private bool firstInstanciateAttempt = false;
+
     void Awake()
     {
-        Instantiate(prefabHorloge, new Vector3(x,y,z), Quaternion.identity);
+        Instantiate(prefabHorloge, new Vector3(x, y, z), Quaternion.identity);
+        clocks = clocks + 1;
     }
 
     void Start()
     {
-
         for(int x = 0; x < nombreHorloges; )
         {
-            Vector3 spawnPoint = gamObjRandomSpawnPoint.transform.position + Random.insideUnitSphere * spawnRadius;
+            spawnHorloge();
 
-            if(!Physics.CheckSphere(spawnPoint, spawnCollisionCheckRadius))
-            {
-                x = x+1;
-                Instantiate(prefabHorloge,spawnPoint,Random.rotation);
-            }
+            x = x + 1;
+        }
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown("space"))
+        {
+            spawnHorloge();
+            EventManager.OnSpacePressed();
+        }
+    }
+
+
+    void spawnHorloge()
+    {
+        if(!firstInstanciateAttempt)
+        {
+            clocks = clocks + 1;
+            Debug.Log(clocks + " clocks");
+            firstInstanciateAttempt = true;
         }
 
+        Vector3 spawnPoint = gamObjRandomSpawnPoint.transform.position + Random.insideUnitSphere * spawnRadius;
+
+        if(!Physics.CheckSphere(spawnPoint, spawnCollisionCheckRadius))
+        {
+            Instantiate(prefabHorloge, spawnPoint, Quaternion.identity);
+            firstInstanciateAttempt = false;
+        }
+        else
+        {
+            spawnHorloge();
+        }
+
+    }
+
+
+    private void OnEnable()
+    {
+        EventManager.SpacePressed += EventManagerOnSpacePressed;
+    }
+    private void OnDisable()
+    {
+        EventManager.SpacePressed -= EventManagerOnSpacePressed;
+    }
+    private void EventManagerOnSpacePressed()
+    {
+        source.Play(0);
     }
 
 }

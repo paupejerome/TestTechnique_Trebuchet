@@ -8,9 +8,11 @@ Chaque exercice aura ca propre scène dans le dossier suivant : Git\TestTechniqu
 
 ______Horaire______
 23-03-02
-15h30 : Début du test
-15h44 : Premier commit
-17h39 : Exercice 1 commit
-17h47 : J'ai due prendre du temps pour acheter une plus grande passante pour mon compte GitHub
-18h11 : Problemes avec limites donnes GitHub réglé
-19h
+15h30 Début du test
+15h45 Creation du projet commit
+17h40 Exercice 1 commit
+18h10 Problemes avec limites de donnes GitHub regle
+19h10 Exercice 2 commit
+19h10-21h20 Pause
+22h45 Exerccie 3 commit
+
