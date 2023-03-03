@@ -12,13 +12,11 @@ public class GameManager : MonoBehaviour
     public float spawnRadius;
     public float spawnCollisionCheckRadius;
 
-    private int clocks = 0;
     private bool firstInstanciateAttempt = false;
 
     void Awake()
     {
         Instantiate(prefabHorloge, new Vector3(x, y, z), Quaternion.identity);
-        clocks = clocks + 1;
     }
 
     void Start()
@@ -26,7 +24,6 @@ public class GameManager : MonoBehaviour
         for(int x = 0; x < nombreHorloges; )
         {
             spawnHorloge();
-
             x = x + 1;
         }
     }
@@ -45,8 +42,6 @@ public class GameManager : MonoBehaviour
     {
         if(!firstInstanciateAttempt)
         {
-            clocks = clocks + 1;
-            Debug.Log(clocks + " clocks");
             firstInstanciateAttempt = true;
         }
 
