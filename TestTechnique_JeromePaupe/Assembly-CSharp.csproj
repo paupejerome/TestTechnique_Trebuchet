@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Horloge.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\02-Creations\Unity\2021.3.19f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

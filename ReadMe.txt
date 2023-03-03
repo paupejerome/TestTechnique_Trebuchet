@@ -11,3 +11,6 @@ ______Horaire______
 15h30 : Début du test
 15h44 : Premier commit
 17h39 : Exercice 1 commit
+17h47 : J'ai due prendre du temps pour acheter une plus grande passante pour mon compte GitHub
+18h11 : Problemes avec limites donnes GitHub réglé
+19h
